@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@theme {
+  /* Breakpoints mirror the viewport widths used by the original Claude Design logic. */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 560px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 700px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1100px;
+  --breakpoint-2xl: 1200px;
+
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+
+  --color-ink: #201e1d;
+  --color-paper: #f3f2f2;
+  --color-orange: #ff914d;
+  --color-orange-deep: #e8701f;
+  --color-orange-soft: #ffb081;
+  --color-rust: #a84b12;
+  --color-muted: #4f4c4b;
+  --color-surface: #eae9e9;
+  --color-card: #f5f4f3;
+  --color-card-hover: #fff1e6;
+  --color-stone: #c9c5c4;
+  --color-mist: #ece8e6;
+  --color-sand: #d9d4d1;
+  --color-ash: #a8a4a3;
+  --color-charcoal: #2d2b2b;
+  --color-night: #1a1817;
+
+  --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --default-transition-timing-function: ease;
+}
+
+@utility shell {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 56px);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+  }
+
+  a {
+    color: var(--color-rust);
+  }
+
+  a:hover {
+    color: var(--color-ink);
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-orange-deep) !important;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: #ffd3b8;
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(16 14 13 / 0.45) 0%,
+        rgb(16 14 13 / 0) 20%,
+        rgb(16 14 13 / 0.1) 40%,
+        rgb(16 14 13 / 0.78) 64%,
+        rgb(16 14 13 / 0.92) 100%
+      );
+  }
+
+  @media (width >= 700px) {
+    .hero-overlay {
+      background:
+        linear-gradient(
+          90deg,
+          rgb(16 14 13 / 0.72) 0%,
+          rgb(16 14 13 / 0.5) 28%,
+          rgb(16 14 13 / 0.12) 55%,
+          rgb(16 14 13 / 0) 72%
+        ),
+        linear-gradient(0deg, rgb(16 14 13 / 0.55) 0%, rgb(16 14 13 / 0) 38%),
+        linear-gradient(180deg, rgb(16 14 13 / 0.45) 0%, rgb(16 14 13 / 0) 18%);
+    }
+  }
+}
+
+/*
+ * Scroll reveal. The `reveal` class is only added to <html> by an inline head script when
+ * JavaScript, IntersectionObserver and full motion are all available, so content is never
+ * hidden for no-JS or reduced-motion visitors.
+ */
+.reveal [data-reveal]:not([data-revealed]) {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.reveal [data-revealed="in"] {
+  transition:
+    opacity 0.9s var(--ease-brand) var(--reveal-delay, 0ms),
+    transform 1s var(--ease-brand) var(--reveal-delay, 0ms) !important;
+}
+
+/*
+ * Hero entrance. Pure CSS so it plays on first paint, without waiting for JavaScript.
+ * Each element sets its own `--intro-delay`.
+ */
+@keyframes intro-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes intro-rise {
+  from {
+    transform: translateY(26px);
+  }
+}
+
+@keyframes intro-zoom {
+  from {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-intro="up"] {
+    animation:
+      intro-fade 0.9s var(--ease-brand) var(--intro-delay, 0ms) both,
+      intro-rise 1s var(--ease-brand) var(--intro-delay, 0ms) both;
+  }
+
+  [data-intro="zoom"] {
+    animation: intro-zoom 2.6s var(--ease-brand) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

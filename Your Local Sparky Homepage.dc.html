@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Your Local Sparky — Homepage concept by Pegasus Digital</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="_ds/modernist-fdae8760-571c-40e3-a647-f81a4abcc26f/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&amp;display=swap">
+<script src="_ds/modernist-fdae8760-571c-40e3-a647-f81a4abcc26f/_ds_bundle.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#f3f2f2;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:#A84B12}
+a:hover{color:#201e1d}
+:focus-visible{outline:3px solid #E8701F !important;outline-offset:3px}
+::selection{background:#FFD3B8;color:#201e1d}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition-duration:0.01ms !important}}
+</style>
+</helmet>
+<div id="top" style="font-family:'Archivo',system-ui,sans-serif;color:#201e1d;background:#f3f2f2;overflow-x:clip;min-height:100vh">
+
+<!-- Concept notice -->
+<div role="note" style="background:#201e1d;color:#f3f2f2;font-size:12.5px;line-height:1.4;letter-spacing:0.01em">
+  <div style="max-width:1440px;margin:0 auto;padding:9px clamp(20px,4vw,56px);display:flex;align-items:center;gap:10px">
+    <span aria-hidden="true" style="width:8px;height:8px;background:#FF914D;flex:none"></span>
+    <span>Independent design concept by Pegasus Digital. Not the official Your Local Sparky website.</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header style="position:{{ headerPos }};top:0;z-index:50;height:{{ headerHpx }};margin-bottom:{{ headerOverlap }};background:{{ headerBg }};backdrop-filter:{{ headerBlur }};-webkit-backdrop-filter:{{ headerBlur }};transition:background-color 0.35s ease, box-shadow 0.35s ease;box-shadow:{{ headerShadow }};color:#f3f2f2">
+  <div style="max-width:1440px;height:100%;box-sizing:border-box;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;align-items:center;gap:clamp(16px,2.4vw,36px)">
+    <a href="#top" aria-label="Your Local Sparky, home" style="display:flex;flex:none;margin-right:auto">
+      <img src="uploads/new-logo.png" alt="Your Local Sparky" width="113" height="72" style="width:{{ logoW }};height:{{ logoH }};object-fit:contain;display:block">
+    </a>
+    <sc-if value="{{ showLinks }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Primary" style="display:flex;align-items:center;gap:clamp(18px,2.2vw,32px)">
+        <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="5">
+          <a href="{{ l.href }}" style="color:#f3f2f2;text-decoration:none;font-size:15px;font-weight:500;padding:6px 0;background-image:linear-gradient(#FF914D,#FF914D);background-repeat:no-repeat;background-position:0 100%;background-size:0% 2px;transition:background-size 0.35s cubic-bezier(.2,.7,.2,1), color 0.25s" style-hover="background-size:100% 2px;color:#ffffff">{{ l.label }}</a>
+        </sc-for>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ showPhoneText }}" hint-placeholder-val="{{ true }}">
+      <a href="tel:0274451631" style="display:flex;align-items:center;gap:8px;color:#f3f2f2;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap;transition:color 0.25s" style-hover="color:#FF914D">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        027 445 1631
+      </a>
+    </sc-if>
+    <sc-if value="{{ showPhoneIcon }}" hint-placeholder-val="{{ false }}">
+      <a href="tel:0274451631" aria-label="Call 027 445 1631" style="width:48px;height:48px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border:2px solid rgba(243,242,242,0.45);color:#f3f2f2;flex:none;transition:background 0.25s,color 0.25s,border-color 0.25s" style-hover="background:#FF914D;border-color:#FF914D;color:#201e1d">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      </a>
+    </sc-if>
+    <sc-if value="{{ showHeaderQuote }}" hint-placeholder-val="{{ true }}">
+      <a href="https://yourlocalsparky.co.nz/contact-us/" style="display:flex;align-items:center;gap:18px;min-height:48px;padding:0 16px 0 18px;background:#FF914D;color:#201e1d;text-decoration:none;font-weight:700;font-size:15px;white-space:nowrap;flex:none;transition:background 0.25s,color 0.25s" style-hover="background:#ffffff;color:#201e1d">
+        Get a Free Quote
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </sc-if>
+    <sc-if value="{{ showBurger }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="mobile-menu" aria-label="{{ menuLabel }}" style="width:48px;height:48px;box-sizing:border-box;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(243,242,242,0.08);color:#f3f2f2;border:2px solid rgba(243,242,242,0.4);cursor:pointer;padding:0;transition:background 0.25s,border-color 0.25s" style-hover="background:rgba(243,242,242,0.16);border-color:#f3f2f2">
+        <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:square"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </sc-if>
+        <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:square"><path d="M3 7h18M3 12h18M3 17h12"></path></svg>
+        </sc-if>
+      </button>
+    </sc-if>
+  </div>
+
+  <!-- Mobile menu -->
+  <sc-if value="{{ showBurger }}" hint-placeholder-val="{{ false }}">
+    <div id="mobile-menu" aria-hidden="{{ menuHidden }}" style="position:absolute;left:0;right:0;top:100%;height:calc(100dvh - {{ headerHpx }});background:#201e1d;border-top:1px solid rgba(243,242,242,0.12);color:#f3f2f2;overflow-y:auto;opacity:{{ menuOpacity }};visibility:{{ menuVis }};transform:{{ menuTransform }};transition:opacity 0.3s ease, transform 0.4s cubic-bezier(.2,.7,.2,1), visibility 0.3s">
+      <nav aria-label="Mobile" style="padding:8px clamp(20px,4vw,56px) 32px;display:flex;flex-direction:column;min-height:100%">
+        <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="5">
+          <a href="{{ l.href }}" onClick="{{ closeMenu }}" tabIndex="{{ menuTab }}" style="display:flex;align-items:baseline;gap:18px;padding:18px 0;border-bottom:2px solid rgba(243,242,242,0.18);color:#f3f2f2;text-decoration:none;font-size:30px;font-weight:700;font-stretch:88%;letter-spacing:-0.02em" style-hover="color:#FF914D">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;color:#FF914D;font-stretch:100%;width:22px">{{ l.num }}</span>{{ l.label }}
+          </a>
+        </sc-for>
+        <div style="margin-top:auto;padding-top:32px;display:flex;flex-direction:column;gap:12px">
+          <a href="https://yourlocalsparky.co.nz/contact-us/" tabIndex="{{ menuTab }}" style="display:flex;align-items:center;justify-content:space-between;min-height:56px;padding:0 20px;background:#FF914D;color:#201e1d;text-decoration:none;font-weight:700;font-size:17px">Get a Free Quote<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          <a href="tel:0274451631" tabIndex="{{ menuTab }}" style="display:flex;align-items:center;justify-content:space-between;min-height:56px;padding:0 20px;border:2px solid rgba(243,242,242,0.5);color:#f3f2f2;text-decoration:none;font-weight:600;font-size:17px">Call 027 445 1631<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
+        </div>
+      </nav>
+    </div>
+  </sc-if>
+</header>
+
+<main>
+<!-- Hero -->
+<section aria-labelledby="hero-title" data-screen-label="Hero" style="position:relative;min-height:{{ heroMinH }};display:flex;flex-direction:column;background:#1a1817;color:#ffffff;overflow:hidden;isolation:isolate">
+  <img data-reveal="zoom" src="uploads/twilight-pergola-withwarm-lights.png" alt="Illustrative image: warm festoon lighting beneath a glass canopy at twilight" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ heroPos }};z-index:-2">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:{{ heroOverlay }}"></div>
+  <p style="position:absolute;right:clamp(16px,4vw,56px);bottom:14px;margin:0;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d9d4d1;z-index:1">Illustrative image</p>
+  <div style="position:relative;flex:1;width:100%;max-width:1440px;margin:0 auto;box-sizing:border-box;padding:{{ heroPad }};display:flex;flex-direction:column;justify-content:flex-end">
+    <div style="max-width:1100px;display:flex;flex-direction:column;gap:clamp(20px,2.4vw,30px)">
+      <p data-reveal="up" data-delay="60" style="margin:0 0 0;display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#FFB081"><span aria-hidden="true" style="width:7px;height:7px;background:#FF914D;flex:none"></span>Christchurch Electrical Services</p>
+      <h1 id="hero-title" style="margin:0;font-family:'Archivo',sans-serif;font-size:clamp(38px,9.4vw,112px);line-height:0.96;letter-spacing:-0.035em;font-stretch:84%;color:#ffffff;text-shadow:0 2px 40px rgba(0,0,0,0.25)">
+        <span data-reveal="up" data-delay="140" style="display:block;font-weight:800">Electrical work<span style="color:#FF914D">.</span></span>
+        <span data-reveal="up" data-delay="260" style="display:block;font-weight:300;letter-spacing:-0.03em">Thoughtfully done<span style="color:#FF914D;font-weight:800">.</span></span>
+      </h1>
+      <p data-reveal="up" data-delay="420" style="margin:0;max-width:31em;font-size:clamp(16.5px,1.3vw,19px);line-height:1.6;color:#ece8e6;text-wrap:pretty">From everyday electrical work to heat pumps, security and new builds, Your Local Sparky offers practical solutions for Christchurch homes and businesses.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:6px">
+        <a data-reveal="up" data-delay="540" href="https://yourlocalsparky.co.nz/contact-us/" style="flex:1 1 220px;max-width:{{ heroBtnMax }};box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:58px;padding:0 20px 0 22px;background:#FF914D;color:#201e1d;text-decoration:none;font-weight:700;font-size:16.5px;transition:background 0.25s,color 0.25s" style-hover="background:#ffffff;color:#201e1d">Get a Free Quote<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a data-reveal="up" data-delay="640" href="#services" style="flex:1 1 220px;max-width:{{ heroBtnMax }};box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:58px;padding:0 20px 0 22px;border:2px solid rgba(255,255,255,0.75);background:rgba(20,18,17,0.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#ffffff;text-decoration:none;font-weight:600;font-size:16.5px;transition:background 0.25s,color 0.25s,border-color 0.25s" style-hover="background:#ffffff;border-color:#ffffff;color:#201e1d">Explore Services<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></a>
+      </div>
+      <a data-reveal="up" data-delay="740" href="tel:0274451631" style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;color:#ece8e6;text-decoration:none;font-size:15px;font-weight:500;padding:4px 0" style-hover="color:#FF914D">Prefer to talk? <span style="font-weight:700;color:#ffffff;border-bottom:2px solid #FF914D;padding-bottom:1px">027 445 1631</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" aria-labelledby="services-title" data-screen-label="Services" style="background:#ffffff;scroll-margin-top:72px">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px)">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 64px;margin-bottom:clamp(36px,4.5vw,60px)">
+      <div style="flex:1 1 520px;min-width:0;max-width:860px">
+        <p data-reveal="up" style="margin:0 0 24px;display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#A84B12"><span aria-hidden="true" style="width:7px;height:7px;background:#FF914D;flex:none"></span>Services</p>
+        <h2 id="services-title" data-reveal="up" data-delay="80" style="margin:0;font-size:clamp(36px,5.4vw,76px);line-height:0.98;font-weight:800;font-stretch:84%;letter-spacing:-0.035em;text-wrap:balance">Electrical solutions for every space<span style="color:#FF914D">.</span></h2>
+      </div>
+      <p data-reveal="up" data-delay="160" style="flex:0 1 380px;min-width:0;margin:0;font-size:17px;line-height:1.6;color:#4f4c4b;text-wrap:pretty">From essential electrical work to modern home comfort and security, explore our range of services.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ featCols }};gap:clamp(14px,1.6vw,24px)">
+      <sc-for list="{{ featured }}" as="f" hint-placeholder-count="3">
+        <a data-reveal="up" data-delay="{{ f.delay }}" href="https://yourlocalsparky.co.nz/contact-us/" aria-label="{{ f.aria }}" onMouseEnter="{{ f.enter }}" onMouseLeave="{{ f.leave }}" onFocus="{{ f.enter }}" onBlur="{{ f.leave }}" style="min-width:0;display:flex;flex-direction:{{ featDir }};background:{{ f.bg }};color:#201e1d;text-decoration:none;transition:background 0.35s">
+          <div style="position:relative;flex:{{ featImgFlex }};aspect-ratio:{{ featRatio }};min-height:{{ featImgMinH }};overflow:hidden;background:#eae9e9;min-width:0">
+            <img src="{{ f.src }}" alt="{{ f.alt }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ f.pos }};transform:{{ f.img }};transition:transform 0.9s cubic-bezier(.2,.7,.2,1)">
+          </div>
+          <div style="flex:1 1 0;min-width:0;padding:clamp(22px,2.2vw,32px);display:flex;flex-direction:column;gap:12px">
+            <h3 style="margin:0;font-size:clamp(23px,1.9vw,28px);line-height:1.08;font-weight:800;font-stretch:88%;letter-spacing:-0.025em;text-wrap:balance">{{ f.title }}</h3>
+            <p style="margin:0;font-size:15.5px;line-height:1.55;color:#4f4c4b;text-wrap:pretty">{{ f.desc }}</p>
+            <span style="margin-top:auto;padding-top:16px;display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:{{ f.linkColor }};transition:color 0.3s">Enquire<svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" style="fill:none;stroke:#E8701F;stroke-width:2.4;stroke-linecap:square;transform:{{ f.arrow }};transition:transform 0.35s cubic-bezier(.2,.7,.2,1)"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+    <div style="margin-top:clamp(56px,6vw,88px)">
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:12px;margin-bottom:clamp(28px,3vw,40px)">
+        <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#A84B12"><span aria-hidden="true" style="width:7px;height:7px;background:#FF914D;flex:none"></span>Also available</p>
+        <h3 style="margin:0;font-size:clamp(24px,2.2vw,30px);line-height:1.1;font-weight:700;font-stretch:88%;letter-spacing:-0.02em;color:#201e1d">More ways we can help<span style="color:#FF914D">.</span></h3>
+      </div>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:{{ supCols }};gap:{{ supGap }}">
+        <sc-for list="{{ specialist }}" as="s" hint-placeholder-count="4">
+          <li data-reveal="up" data-delay="{{ s.delay }}" style="min-width:0;display:flex">
+            <a href="https://yourlocalsparky.co.nz/contact-us/" aria-label="{{ s.aria }}" onMouseEnter="{{ s.enter }}" onMouseLeave="{{ s.leave }}" onFocus="{{ s.enter }}" onBlur="{{ s.leave }}" style="position:relative;flex:1;min-width:0;display:flex;flex-direction:column;gap:12px;padding-top:{{ supItemPad }};color:#201e1d;text-decoration:none">
+              <span aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:2px;background:rgba(32,30,29,0.1)"></span>
+              <span aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:2px;background:#FF914D;transform:{{ s.bar }};transform-origin:left;transition:transform 0.3s cubic-bezier(.2,.7,.2,1)"></span>
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="34" height="34" style="flex:none;fill:none;stroke:{{ s.iconColor }};stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;transition:stroke 0.28s ease"><path d="{{ s.icon }}"></path></svg>
+              <span style="margin-top:4px;font-size:clamp(20px,1.6vw,23px);font-weight:800;font-stretch:88%;letter-spacing:-0.02em;line-height:1.15;color:{{ s.titleColor }};transition:color 0.28s ease;text-wrap:balance">{{ s.title }}</span>
+              <span style="font-size:15px;line-height:1.55;color:#4f4c4b;text-wrap:pretty">{{ s.desc }}</span>
+              <span style="margin-top:auto;padding-top:6px;display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:700;color:{{ s.linkColor }};transition:color 0.28s ease">Enquire<svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" style="fill:none;stroke:#E8701F;stroke-width:2.4;stroke-linecap:square;transform:{{ s.arrow }};transition:transform 0.28s cubic-bezier(.2,.7,.2,1)"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" aria-labelledby="about-title" data-screen-label="About" style="background:#f3f2f2;scroll-margin-top:72px">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px)">
+    <p data-reveal="up" style="margin:0 0 24px;display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#A84B12"><span aria-hidden="true" style="width:7px;height:7px;background:#FF914D;flex:none"></span>About</p>
+    <div style="container-type:inline-size">
+      <h2 id="about-title" data-reveal="up" data-delay="80" style="margin:0;max-width:13ch;font-size:clamp(40px,7.6cqi,112px);line-height:0.96;font-weight:800;font-stretch:84%;letter-spacing:-0.04em;text-wrap:balance">It’s the details that make the difference<span style="color:#FF914D">.</span></h2>
+    </div>
+    <div style="margin-top:clamp(40px,5vw,72px);display:grid;grid-template-columns:{{ aboutCols }};gap:clamp(32px,5vw,80px);align-items:stretch">
+      <figure data-reveal="up" style="margin:0;position:relative;overflow:hidden;background:#eae9e9;aspect-ratio:{{ aboutRatio }};min-height:{{ aboutImgMinH }}">
+        <img src="uploads/q4.jpg" alt="Interior with dark timber stairs, glass balustrades and recessed downlights" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.03)">
+      </figure>
+      <div style="min-width:0;display:flex;flex-direction:column;gap:clamp(28px,3vw,40px);padding:{{ aboutPad }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p data-reveal="up" style="margin:0;max-width:30em;font-size:clamp(19px,1.6vw,23px);line-height:1.45;font-weight:600;letter-spacing:-0.01em;text-wrap:pretty">A Christchurch electrical contractor working with homes and businesses, from everyday electrical work to new builds and renovations.</p>
+          <p data-reveal="up" data-delay="80" style="margin:0;max-width:32em;font-size:16.5px;line-height:1.65;color:#4f4c4b;text-wrap:pretty">We take pride in quality workmanship and clear communication, from the first quote to the final check.</p>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(18px,2vw,24px)">
+          <sc-for list="{{ qualities }}" as="q" hint-placeholder-count="3">
+            <li data-reveal="up" style="display:flex;gap:16px;align-items:flex-start">
+              <span aria-hidden="true" style="width:8px;height:8px;background:#FF914D;flex:none;margin-top:9px"></span>
+              <span style="display:flex;flex-direction:column;gap:4px;min-width:0">
+                <span style="font-size:19px;font-weight:700;font-stretch:90%;letter-spacing:-0.015em;line-height:1.25">{{ q.title }}</span>
+                <span style="font-size:15.5px;line-height:1.5;color:#4f4c4b">{{ q.desc }}</span>
+              </span>
+            </li>
+          </sc-for>
+        </ul>
+        <div data-reveal="up" style="margin-top:auto;align-self:flex-start">
+          <a href="https://yourlocalsparky.co.nz/contact-us/" onMouseEnter="{{ ql.enter }}" onMouseLeave="{{ ql.leave }}" onFocus="{{ ql.enter }}" onBlur="{{ ql.leave }}" style="position:relative;display:inline-flex;align-items:center;gap:10px;color:{{ ql.color }};text-decoration:none;font-weight:700;font-size:16px;line-height:1.3;padding:6px 0 9px;transition:color 0.25s ease">
+            <span>Request a free, no-obligation quote</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" style="flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square;transform:{{ ql.arrow }};transition:transform 0.25s ease"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,145,77,0.4)"></span>
+            <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px;background:#FF914D;transform:{{ ql.line }};transform-origin:left;transition:transform 0.28s cubic-bezier(.2,.7,.2,1)"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" aria-labelledby="gallery-title" data-screen-label="Gallery" style="background:#201e1d;color:#f3f2f2;scroll-margin-top:84px">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,4vw,56px)">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;padding-bottom:clamp(28px,3vw,40px);border-bottom:2px solid rgba(243,242,242,0.22);margin-bottom:clamp(20px,2vw,28px)">
+      <div>
+        <p data-reveal="up" style="margin:0 0 24px;display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#FF914D"><span aria-hidden="true" style="width:7px;height:7px;background:#FF914D;flex:none"></span>Gallery</p>
+        <h2 id="gallery-title" data-reveal="up" data-delay="80" style="margin:0;font-size:clamp(48px,8vw,120px);line-height:0.92;font-weight:800;font-stretch:84%;letter-spacing:-0.045em">A closer look<span style="color:#FF914D">.</span></h2>
+      </div>
+      <p data-reveal="up" data-delay="160" style="margin:0;max-width:26em;font-size:16.5px;line-height:1.6;color:#c9c5c4;text-wrap:pretty">Explore imagery from the Your Local Sparky website, featuring residential spaces and electrical installations.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ gal.cols }};grid-template-rows:{{ gal.rows }};gap:clamp(8px,1.2vw,16px)">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="4">
+        <figure data-reveal="up" data-delay="{{ g.delay }}" style="margin:0;position:relative;overflow:hidden;background:#2d2b2b;grid-column:{{ g.col }};grid-row:{{ g.row }};min-height:0">
+          <img src="{{ g.src }}" alt="{{ g.alt }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ g.pos }};transition:transform 1.1s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)">
+          <sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}">
+            <figcaption style="position:absolute;left:0;bottom:0;margin:0;padding:9px 14px;background:#201e1d;color:#f3f2f2;font-size:11.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;pointer-events:none">{{ g.cap }}</figcaption>
+          </sc-if>
+        </figure>
+      </sc-for>
+      <div data-reveal="up" data-delay="120" style="grid-column:{{ gal.textCol }};grid-row:{{ gal.textRow }};border:2px solid rgba(243,242,242,0.22);padding:clamp(18px,2.4vw,36px);display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-width:0">
+        <p style="margin:0;font-size:clamp(20px,2.4vw,34px);line-height:1.12;font-weight:700;font-stretch:88%;letter-spacing:-0.025em;max-width:16em;text-wrap:balance">Lighting, comfort and the finishing details that bring a space together.</p>
+        <a href="https://yourlocalsparky.co.nz/gallery/" style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;color:#f3f2f2;text-decoration:none;font-weight:700;font-size:15px;padding:6px 0;background-image:linear-gradient(#FF914D,#FF914D);background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px" style-hover="color:#FF914D">View the full gallery<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Closing CTA -->
+<section id="contact" aria-labelledby="contact-title" data-screen-label="Contact" style="background:#FF914D;color:#201e1d;scroll-margin-top:84px">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,4vw,56px) 0">
+    <p data-reveal="up" style="margin:0 0 28px;display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#201e1d"><span aria-hidden="true" style="width:7px;height:7px;background:#201e1d;flex:none"></span>Contact</p>
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,80px);align-items:flex-end">
+      <div style="flex:1.6 1 520px;min-width:0;container-type:inline-size">
+        <h2 id="contact-title" data-reveal="up" data-delay="80" style="margin:0;font-size:clamp(44px,12cqi,128px);line-height:0.93;font-weight:800;font-stretch:84%;letter-spacing:-0.045em;text-wrap:balance">Let’s talk about your next project.</h2>
+      </div>
+      <div data-reveal="up" data-delay="180" style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:24px">
+        <p style="margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.55;font-weight:500;max-width:28em;text-wrap:pretty">Planning an electrical upgrade, installing a heat pump or building something new? Get in touch to discuss your requirements.</p>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <a href="https://yourlocalsparky.co.nz/contact-us/" style="display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:62px;padding:0 22px;background:#201e1d;color:#f3f2f2;text-decoration:none;font-weight:700;font-size:17px;transition:background 0.25s,color 0.25s" style-hover="background:#ffffff;color:#201e1d">Get a Free Quote<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          <a href="tel:0274451631" style="display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:62px;padding:0 22px;border:2px solid #201e1d;color:#201e1d;text-decoration:none;font-weight:700;font-size:17px;transition:background 0.25s,color 0.25s" style-hover="background:#201e1d;color:#FF914D">Call 027 445 1631<svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
+        </div>
+      </div>
+    </div>
+    <dl style="margin:clamp(56px,7vw,96px) 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:2px solid #201e1d">
+      <div style="padding:22px 24px 26px 0;border-bottom:2px solid rgba(32,30,29,0.35)">
+        <dt style="font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Phone</dt>
+        <dd style="margin:6px 0 0;font-size:20px;font-weight:700"><a href="tel:0274451631" style="color:#201e1d;text-decoration:none" style-hover="text-decoration:underline">027 445 1631</a></dd>
+      </div>
+      <div style="padding:22px 24px 26px 0;border-bottom:2px solid rgba(32,30,29,0.35)">
+        <dt style="font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Service area</dt>
+        <dd style="margin:6px 0 0;font-size:20px;font-weight:700">Christchurch</dd>
+      </div>
+      <div style="padding:22px 24px 26px 0;border-bottom:2px solid rgba(32,30,29,0.35)">
+        <dt style="font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Quotes</dt>
+        <dd style="margin:6px 0 0;font-size:20px;font-weight:700">Free &amp; no-obligation</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer style="background:#201e1d;color:#f3f2f2">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px) 28px">
+    <div style="display:flex;flex-wrap:wrap;gap:48px clamp(32px,5vw,72px)">
+      <div style="flex:1.6 1 280px;min-width:0;display:flex;flex-direction:column;gap:22px">
+        <a href="#top" aria-label="Your Local Sparky, back to top" style="display:flex">
+          <img src="uploads/new-logo.png" alt="Your Local Sparky" width="126" height="80" style="width:126px;height:80px;object-fit:contain;display:block">
+        </a>
+        <p style="margin:0;max-width:26em;font-size:15px;line-height:1.6;color:#c9c5c4">Electrical work, heat pumps, underfloor heating, security systems and more for homes and businesses across Christchurch.</p>
+      </div>
+      <nav aria-label="Services" style="flex:1 1 200px;min-width:0">
+        <h2 style="margin:0 0 16px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#FF914D">Services</h2>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px">
+          <sc-for list="{{ footerServices }}" as="f" hint-placeholder-count="7">
+            <li><a href="#services" style="display:inline-block;padding:5px 0;color:#f3f2f2;text-decoration:none;font-size:15px" style-hover="color:#FF914D">{{ f }}</a></li>
+          </sc-for>
+        </ul>
+      </nav>
+      <nav aria-label="Footer" style="flex:0.8 1 140px;min-width:0">
+        <h2 style="margin:0 0 16px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#FF914D">Navigate</h2>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px">
+          <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="5">
+            <li><a href="{{ l.href }}" style="display:inline-block;padding:5px 0;color:#f3f2f2;text-decoration:none;font-size:15px" style-hover="color:#FF914D">{{ l.label }}</a></li>
+          </sc-for>
+        </ul>
+      </nav>
+      <div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:14px">
+        <h2 style="margin:0 0 2px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#FF914D">Contact</h2>
+        <p style="margin:0;font-size:15px;color:#c9c5c4">Christchurch</p>
+        <a href="tel:0274451631" style="color:#f3f2f2;text-decoration:none;font-size:24px;font-weight:800;letter-spacing:-0.01em" style-hover="color:#FF914D">027 445 1631</a>
+        <a href="https://yourlocalsparky.co.nz/contact-us/" style="margin-top:8px;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:52px;padding:0 18px;background:#FF914D;color:#201e1d;text-decoration:none;font-weight:700;font-size:15.5px;max-width:260px;transition:background 0.25s" style-hover="background:#f3f2f2;color:#201e1d">Get a Free Quote<svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+    <div style="margin-top:clamp(48px,6vw,80px);padding-top:20px;border-top:2px solid rgba(243,242,242,0.22);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 32px;font-size:13px;color:#a8a4a3">
+      <span>© 2026 Your Local Sparky. All rights reserved.</span>
+      <span>Independent, unsolicited homepage concept by Pegasus Digital. Not affiliated with or commissioned by Your Local Sparky.</span>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;stickyHeader&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;galleryCaptions&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Gallery&quot;}}">
+class Component extends DCLogic {
+  state = { vw: typeof window !== 'undefined' ? window.innerWidth : 1440, menu: false, scrolled: false, hover: null };
+
+  componentDidMount() {
+    this._r = () => {
+      const vw = window.innerWidth;
+      const patch = { vw };
+      if (vw >= 1024 && this.state.menu) { patch.menu = false; document.body.style.overflow = ''; }
+      this.setState(patch);
+    };
+    this._s = () => { const s = window.scrollY > 40; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    this._k = (e) => { if (e.key === 'Escape' && this.state.menu) this.setMenu(false); };
+    window.addEventListener('resize', this._r);
+    window.addEventListener('scroll', this._s, { passive: true });
+    window.addEventListener('keydown', this._k);
+    this._r(); this._s();
+    if (this.props.motion ?? true) this.setupReveal();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._r);
+    window.removeEventListener('scroll', this._s);
+    window.removeEventListener('keydown', this._k);
+    if (this._io) this._io.disconnect();
+    document.body.style.overflow = '';
+  }
+
+  setupReveal() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    els.forEach((el) => {
+      const t = el.getAttribute('data-reveal');
+      el.style.transition = 'none';
+      if (t === 'img') el.style.clipPath = 'inset(0 0 0 100%)';
+      else if (t === 'zoom') el.style.transform = 'scale(1.06)';
+      else { el.style.opacity = '0'; el.style.transform = 'translateY(26px)'; }
+    });
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        const el = en.target;
+        this._io.unobserve(el);
+        const t = el.getAttribute('data-reveal');
+        const d = parseInt(el.getAttribute('data-delay') || '0', 10) || 0;
+        void el.offsetWidth;
+        if (t === 'img') { el.style.transition = `clip-path 1.3s cubic-bezier(.75,0,.2,1) ${d}ms`; el.style.clipPath = 'inset(0 0 0 0)'; }
+        else if (t === 'zoom') { el.style.transition = `transform 2.6s ${ease} ${d}ms`; el.style.transform = 'scale(1)'; }
+        else { el.style.transition = `opacity 0.9s ${ease} ${d}ms, transform 1s ${ease} ${d}ms`; el.style.opacity = '1'; el.style.transform = 'none'; }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach((el) => this._io.observe(el));
+  }
+
+  setMenu(open) {
+    this.setState({ menu: open });
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  hv(k) {
+    const on = this.state.hover === k;
+    return {
+      on,
+      img: on ? 'scale(1.05)' : 'scale(1)',
+      arrow: on ? 'translateX(6px)' : 'translateX(0)',
+      bg: on ? '#FFF1E6' : '#f5f4f3',
+      enter: () => this.setState({ hover: k }),
+      leave: () => this.setState((s) => (s.hover === k ? { hover: null } : null)),
+    };
+  }
+
+  renderVals() {
+    const { vw, menu, scrolled } = this.state;
+    const sticky = this.props.stickyHeader ?? true;
+    const desk = vw >= 1024;
+    const bp = vw >= 1024 ? 'lg' : vw >= 700 ? 'md' : 'sm';
+    const hH = desk ? 92 : 76;
+
+    const navLinks = [
+      { num: '01', label: 'Home', href: '#top' },
+      { num: '02', label: 'Services', href: '#services' },
+      { num: '03', label: 'About', href: '#about' },
+      { num: '04', label: 'Gallery', href: '#gallery' },
+      { num: '05', label: 'Contact', href: '#contact' },
+    ];
+
+    const featuredData = [
+      ['ge', 'General Electrical', 'Lighting, wiring, sockets and switches, plus repairs and maintenance for homes and businesses.', 'uploads/a1-1024x768-640x480.jpg', 'Black ceiling fan installed beneath a white louvred ceiling', '60% 40%'],
+      ['hp', 'Heat Pumps & Air Conditioning', 'Heat pump and air conditioning installation to keep your home comfortable year-round.', 'uploads/a2-1024x768-640x480.jpg', 'Wall-mounted indoor heat pump unit above a window', '50% 35%'],
+      ['nb', 'New Builds & Renovations', 'Electrical, heat pump and underfloor heating work planned in from the start of your project.', 'uploads/q6.jpg', 'Contemporary two-storey house with white rendered walls and black-framed windows', '55% 45%'],
+    ];
+    const featured = featuredData.map(([k, title, desc, src, alt, pos], i) => {
+      const hv = this.hv(k);
+      return { title, desc, src, alt, pos, aria: `Enquire about ${title}`, delay: String(desk ? i * 100 : 0),
+        enter: hv.enter, leave: hv.leave, img: hv.img, arrow: hv.arrow, bg: hv.bg, linkColor: hv.on ? '#A84B12' : '#201e1d' };
+    });
+
+    const specialistData = [
+      ['sp4', 'Underfloor Heating', 'Even, quiet warmth underfoot, ideal for new builds and renovations.', 'M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1'],
+      ['sp5', 'Security Systems & Cameras', 'Alarm and CCTV camera installation to help protect your property.', 'M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1zM9 12l2 2 4-4'],
+      ['sp6', 'Central Vacuum Systems', 'Built-in systems that make cleaning every room easier.', 'M12.8 19.6A2 2 0 1 0 14 16H2M17.5 8a2.5 2.5 0 1 1 2 4H2M9.8 4.4A2 2 0 1 1 11 8H2'],
+      ['sp7', 'Aerials', 'TV aerial installation for homes across Christchurch.', 'M4.9 16.1C1 12.2 1 5.8 4.9 1.9M7.8 4.7a6.14 6.14 0 0 0-.8 7.5M14 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0M16.2 4.8c2 2 2.26 5.11.8 7.47M19.1 1.9a9.96 9.96 0 0 1 0 14.1M9.5 18h5M8 22l4-11 4 11'],
+    ];
+    const specialist = specialistData.map(([k, title, desc, icon], i) => {
+      const hv = this.hv(k);
+      return { title, desc, icon, aria: `Enquire about ${title}`, delay: String(vw >= 640 ? i * 80 : 0),
+        enter: hv.enter, leave: hv.leave, arrow: hv.on ? 'translateX(4px)' : 'translateX(0)',
+        bar: hv.on ? 'scaleX(1)' : 'scaleX(0)', iconColor: hv.on ? '#E8701F' : '#201e1d', titleColor: hv.on ? '#A84B12' : '#201e1d', linkColor: hv.on ? '#A84B12' : '#201e1d' };
+    });
+    const qh = this.hv('ql');
+    const ql = { enter: qh.enter, leave: qh.leave, color: qh.on ? '#A84B12' : '#201e1d',
+      arrow: qh.on ? 'translateX(4px)' : 'translateX(0)', line: qh.on ? 'scaleX(1)' : 'scaleX(0)' };
+
+    const G = {
+      lg: { cols: 'repeat(12,minmax(0,1fr))', rows: 'clamp(240px,23vw,340px) clamp(240px,23vw,340px) clamp(300px,27vw,400px)',
+        items: [['1 / 9', '1 / 3'], ['9 / 13', '1 / 2'], ['9 / 13', '2 / 3'], ['10 / 13', '3 / 4']], textCol: '1 / 10', textRow: '3 / 4' },
+      md: { cols: 'repeat(6,minmax(0,1fr))', rows: '420px 260px 320px',
+        items: [['1 / 7', '1 / 2'], ['1 / 4', '2 / 3'], ['4 / 7', '2 / 3'], ['5 / 7', '3 / 4']], textCol: '1 / 5', textRow: '3 / 4' },
+      sm: { cols: 'repeat(2,minmax(0,1fr))', rows: '260px 190px 240px auto',
+        items: [['1 / 3', '1 / 2'], ['1 / 2', '2 / 3'], ['2 / 3', '2 / 3'], ['1 / 3', '3 / 4']], textCol: '1 / 3', textRow: '4 / 5' },
+    }[bp];
+    const galData = [
+      ['uploads/q1.jpg', 'Bright open-plan living, dining and kitchen with recessed downlights', 'Open-plan living', '50% 55%'],
+      ['uploads/q2.jpg', 'Modern entrance with floating timber stairs, glass balustrade and downlights', 'Entrance & stair', '35% 50%'],
+      ['uploads/q5.jpg', 'White bathroom with glass shower and vanity', 'Bathroom', '40% 50%'],
+      ['uploads/a5-640x480.jpg', 'Outdoor heat pump unit installed beside a weatherboard house', 'Heat pump', '50% 55%'],
+    ];
+    const gallery = galData.map(([src, alt, cap, pos], i) => ({
+      src, alt, cap, pos: bp === 'sm' && i === 3 ? '50% 60%' : pos,
+      col: G.items[i][0], row: G.items[i][1], delay: String(i * 90),
+    }));
+
+    const ov = 'rgba(16,14,13,';
+    const heroOverlay = vw >= 700
+      ? `linear-gradient(90deg, ${ov}0.72) 0%, ${ov}0.5) 28%, ${ov}0.12) 55%, ${ov}0) 72%), linear-gradient(0deg, ${ov}0.55) 0%, ${ov}0) 38%), linear-gradient(180deg, ${ov}0.45) 0%, ${ov}0) 18%)`
+      : `linear-gradient(180deg, ${ov}0.45) 0%, ${ov}0) 20%, ${ov}0.1) 40%, ${ov}0.78) 64%, ${ov}0.92) 100%)`;
+
+    return {
+      headerPos: sticky ? 'sticky' : 'relative',
+      headerHpx: hH + 'px',
+      headerOverlap: -hH + 'px',
+      headerBg: menu || scrolled ? 'rgba(32,30,29,0.97)' : desk ? 'rgba(16,14,13,0.18)' : 'rgba(24,22,21,0.6)',
+      headerBlur: scrolled || menu ? 'none' : 'blur(10px)',
+      headerShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.18)' : 'none',
+      logoW: desk ? '113px' : '88px',
+      logoH: desk ? '72px' : '56px',
+      showLinks: desk,
+      showPhoneText: vw >= 1200,
+      showPhoneIcon: vw >= 560 && vw < 1200,
+      showHeaderQuote: vw >= 560,
+      showBurger: !desk,
+      menuOpen: menu, menuClosed: !menu,
+      menuExpanded: menu ? 'true' : 'false',
+      menuHidden: menu ? 'false' : 'true',
+      menuLabel: menu ? 'Close menu' : 'Open menu',
+      menuOpacity: menu ? 1 : 0,
+      menuVis: menu ? 'visible' : 'hidden',
+      menuTransform: menu ? 'translateY(0)' : 'translateY(-12px)',
+      menuTab: menu ? 0 : -1,
+      toggleMenu: () => this.setMenu(!this.state.menu),
+      closeMenu: () => this.setMenu(false),
+      navLinks,
+      heroMinH: vw >= 700 ? 'max(640px, calc(100svh - 36px))' : 'max(600px, calc(100svh - 52px))',
+      heroPad: vw >= 700
+        ? `${hH + 56}px clamp(20px,4vw,56px) clamp(56px,10vh,112px)`
+        : `${hH + 140}px 20px 40px`,
+      heroPos: vw < 700 ? '63% 40%' : vw < 1024 ? '58% 50%' : '50% 45%',
+      heroOverlay,
+      heroBtnMax: vw < 560 ? 'none' : '280px',
+      featCols: desk ? 'repeat(3,minmax(0,1fr))' : 'minmax(0,1fr)',
+      featDir: bp === 'md' ? 'row' : 'column',
+      featImgFlex: bp === 'md' ? '0 0 46%' : 'none',
+      featRatio: bp === 'md' ? 'auto' : '4 / 3',
+      featImgMinH: bp === 'md' ? '280px' : '0',
+      supCols: vw >= 1100 ? 'repeat(4,minmax(0,1fr))' : vw >= 640 ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)',
+      supGap: vw >= 1100 ? 'clamp(28px,2.8vw,44px)' : vw >= 640 ? '40px 36px' : '28px',
+      supItemPad: vw >= 640 ? '24px' : '20px',
+      ql,
+      specialist, featured,
+      aboutCols: desk ? 'minmax(0,1.1fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      aboutRatio: desk ? 'auto' : '3 / 2',
+      aboutImgMinH: desk ? '520px' : '0',
+      aboutPad: desk ? '8px 0' : '0',
+      qualities: [
+        { title: 'Attention to detail', desc: 'Quality workmanship, without cutting corners.' },
+        { title: 'Professional communication', desc: 'Great service and clear updates at every stage.' },
+        { title: 'A wide range of services', desc: 'Electrical, heat pumps, underfloor heating, security and more.' },
+      ],
+      gal: G, gallery,
+      showCaptions: this.props.galleryCaptions ?? true,
+      footerServices: ['General Electrical', 'Heat Pumps & Air Conditioning', 'Underfloor Heating', 'Security Systems & Cameras', 'New Builds & Renovations', 'Central Vacuum Systems', 'Aerials'],
+    };
+  }
+}
+</script>
+</body>
+</html>
